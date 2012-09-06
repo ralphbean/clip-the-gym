@@ -1,33 +1,15 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.2.2'
+version = '0.0.1'
 
-setup(name='bitlyclip',
+with open("README.rst") as f:
+    long_description = f.read()
+
+setup(name='clip-the-gym',
       version=version,
-      description="bit.ly-fy a url in the X clipboard",
-      long_description="""
-      `bitlyclip` is just a script that:
-
-        - takes a url in your clipboard
-        - bitly-ifies it
-        - puts the new url back in your clipboard
-
-      It makes a nice 'hotkey' in whatever window manager you're using.
-
-      If you have notify-python installed, it will
-      pop up nice messages for you.
-
-        - http://www.galago-project.org/downloads.php
-
-      You'll need to have ``xsel`` on your system::
-
-        $ sudo yum -y install xsel
-
-      To install bitlyclip itself:  ``$ pip install bitlyclip``
-
-      To use: ``$ bitlyclip``
-      """,
+      description="Helper script to download audio from youtube for the gym",
+      long_description=long_description,
       classifiers=[
           'Development Status :: 4 - Beta',
           'Intended Audience :: Developers',
@@ -43,16 +25,15 @@ setup(name='bitlyclip',
       keywords='',
       author='Ralph Bean',
       author_email='rbean@redhat.com',
-      url='http://github.com/ralphbean/bitlyclip',
+      url='http://github.com/ralphbean/clip-the-gym',
       license='GPLv3+',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'bitlyapi',
       ],
       entry_points="""
       [console_scripts]
-      bitlyclip = bitlyclip:cmd
+      clip-the-gym = clipthegym:cmd
       """,
      )
