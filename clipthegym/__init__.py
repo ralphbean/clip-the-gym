@@ -42,6 +42,7 @@ def main(url):
     opts, args = parse_args()
 
     if "youtube.com" not in url:
+        sh.mplayer("/usr/share/sounds/freedesktop/stereo/message.oga")
         return "%r is not a valid youtube url." % url
 
     notify("Grabbing %r" % url)
@@ -59,6 +60,7 @@ def main(url):
     )
     # Just report on the last line of text..
     output = unicode(output).strip().split('\n')[-1]
+    sh.mplayer("/usr/share/sounds/freedesktop/stereo/complete.oga")
     return output
 
 
